@@ -103,17 +103,10 @@ async def start_command(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton("about", callback_data = "about"),
-                    InlineKeyboardButton("close", callback_data="close")
+                    InlineKeyboardButton("close", callback_data= "close")
                 ]
                 ]
-            ]
         )
-        elif data == "close":
-        await query.message.delete()
-        try:
-            await query.message.reply_to_message.delete()
-        except:
-            pass
         await message.reply_text(
             text = START_MSG.format(
                 first = message.from_user.first_name,
