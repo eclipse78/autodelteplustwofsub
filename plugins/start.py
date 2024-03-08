@@ -89,7 +89,7 @@ async def start_command(client: Client, message: Message):
                 snt_msgs.append(snt_msg)
             except:
                 pass
-        await message.reply_text("<b>NOTE</b>\n<b>• Save these files to the your saved messages, Files in this chat will be automatically deleted after 15 minutes</b>")
+        await message.reply_text("<b>Note</b>\n\n<b>• Save these files to the your saved messages, Files in this chat will be automatically deleted after 15 minutes</b>")
         await asyncio.sleep(SECONDS)
 
         for snt_msg in snt_msgs:
