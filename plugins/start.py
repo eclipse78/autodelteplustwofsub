@@ -17,7 +17,7 @@ from database.database import add_user, del_user, full_userbase, present_user
 
 """add time im seconds for waitingwaiting before delete 
 1min=60, 2min=60×2=120, 5min=60×5=300"""
-SECONDS = int(os.getenv("SECONDS", "30"))
+SECONDS = int(os.getenv("SECONDS", "900"))
 
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
@@ -57,7 +57,7 @@ async def start_command(client: Client, message: Message):
                 ids = [int(int(argument[1]) / abs(client.db_channel.id))]
             except:
                 return
-        temp_msg = await message.reply("Wait A Second...")
+        temp_msg = await message.reply("wait a moment...")
         try:
             messages = await get_messages(client, ids)
         except:
@@ -89,7 +89,7 @@ async def start_command(client: Client, message: Message):
                 snt_msgs.append(snt_msg)
             except:
                 pass
-        await message.reply_text("Baka! Files will be deleted After 5 minutes. Save them to the Saved Message now!")
+        await message.reply_text("Save these files to the your saved messages, Files will be automatically deleted after 15 minutes")
         await asyncio.sleep(SECONDS)
 
         for snt_msg in snt_msgs:
@@ -102,8 +102,7 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⚡️ ᴀʙᴏᴜᴛ", callback_data = "about"),
-                    InlineKeyboardButton('🍁 ᴘʀᴇᴍɪᴜᴍ', url='https://t.me/OtakuFlix_Network/4639')
+                    InlineKeyboardButton("about", callback_data = "about"),
                 ]
             ]
         )
@@ -136,15 +135,17 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
 async def not_joined(client: Client, message: Message):
     buttons = [
         [
-            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink),
-            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink2),
+            InlineKeyboardButton(text="Join Channel 1", url=client.invitelink),
+            InlineKeyboardButton(text="Join Channel 2", url=client.invitelink2),
         ]
+        [
+            InlineKeyboardButton(text="Send a Request to Backup Channel", url='https://t.me/+-QN7xhGy-vI1N2Mx'),
     ]
     try:
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text = 'ʀᴇʟᴏᴀᴅ',
+                    text = 'Reload',
                     url = f"https://t.me/{client.username}?start={message.command[1]}"
                 )
             ]
