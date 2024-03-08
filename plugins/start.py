@@ -99,6 +99,13 @@ async def start_command(client: Client, message: Message):
                 pass
         return
     else:
+        reply_markup = InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("about", callback_data = "about"),
+                ]
+            ]
+        )
         await message.reply_text(
             text = START_MSG.format(
                 first = message.from_user.first_name,
@@ -130,7 +137,7 @@ async def not_joined(client: Client, message: Message):
         [
             InlineKeyboardButton(text="Join Channel 1", url=client.invitelink),
             InlineKeyboardButton(text="Join Channel 2", url=client.invitelink2),
-        ]
+        ],
         [
             InlineKeyboardButton(text="Send a Request to Backup Channel", url='https://t.me/+-QN7xhGy-vI1N2Mx'),
     ],
