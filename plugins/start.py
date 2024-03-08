@@ -89,7 +89,7 @@ async def start_command(client: Client, message: Message):
                 snt_msgs.append(snt_msg)
             except:
                 pass
-        await message.reply_text("Save these files to the your saved messages, Files will be automatically deleted after 15 minutes")
+        await message.reply_text("<b>Save these files to the your saved messages, Files in this chat will be automatically deleted after 15 minutes</b>")
         await asyncio.sleep(SECONDS)
 
         for snt_msg in snt_msgs:
@@ -103,6 +103,8 @@ async def start_command(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton("about", callback_data = "about"),
+                    InlineKeyboardButton("close", callback_data="close")
+                ]
                 ]
             ]
         )
@@ -135,18 +137,18 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
 async def not_joined(client: Client, message: Message):
     buttons = [
         [
-            InlineKeyboardButton(text="Join Channel 1", url=client.invitelink),
-            InlineKeyboardButton(text="Join Channel 2", url=client.invitelink2),
+            InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝟭", url=client.invitelink),
+            InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝟮", url=client.invitelink2),
         ],
         [
-            InlineKeyboardButton(text="Send a Request to Backup Channel", url='https://t.me/+-QN7xhGy-vI1N2Mx'),
+            InlineKeyboardButton(text="𝗦𝗲𝗻𝗱 𝗮 𝗥𝗲𝗾𝘂𝗲𝘀𝘁 𝘁𝗼 𝗕𝗮𝗰𝗸𝘂𝗽 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url='https://t.me/+-QN7xhGy-vI1N2Mx'),
     ],
     ]
     try:
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text = 'Reload',
+                    text = '•• 𝗥𝗘𝗟𝗢𝗔𝗗 ••',
                     url = f"https://t.me/{client.username}?start={message.command[1]}"
                 )
             ]
