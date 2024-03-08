@@ -133,7 +133,7 @@ async def not_joined(client: Client, message: Message):
         ]
         [
             InlineKeyboardButton(text="Send a Request to Backup Channel", url='https://t.me/+-QN7xhGy-vI1N2Mx'),
-    ]
+    ],
     ]
     try:
         buttons.append(
