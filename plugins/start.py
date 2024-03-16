@@ -17,7 +17,7 @@ from database.database import add_user, del_user, full_userbase, present_user
 
 """add time im seconds for waitingwaiting before delete 
 1min=60, 2min=60×2=120, 5min=60×5=300"""
-SECONDS = int(os.getenv("SECONDS", "30"))
+SECONDS = int(os.getenv("SECONDS", "600"))
 
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
@@ -89,7 +89,7 @@ async def start_command(client: Client, message: Message):
                 snt_msgs.append(snt_msg)
             except:
                 pass
-        SD = await message.reply_text("<b>Note</b>\n<b>• Save these files to the your saved messages, Files in this chat will be automatically deleted after 30 seconds</b>")
+        SD = await message.reply_text("<b>Note</b>\n<b>• Save these files to the your saved messages or to any other private chat, Files in this chat will be automatically deleted after 10 minutes</b>")
         await asyncio.sleep(SECONDS)
 
         for snt_msg in snt_msgs:
@@ -141,14 +141,14 @@ async def not_joined(client: Client, message: Message):
             InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝟮", url=client.invitelink2),
         ],
         [
-            InlineKeyboardButton(text="𝗦𝗲𝗻𝗱 𝗮 𝗥𝗲𝗾𝘂𝗲𝘀𝘁 𝘁𝗼 𝗕𝗮𝗰𝗸𝘂𝗽 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url='https://t.me/+-QN7xhGy-vI1N2Mx'),
+            InlineKeyboardButton(text="𝗦𝗲𝗻𝗱 𝗮 𝗥𝗲𝗾𝘂𝗲𝘀𝘁 𝘁𝗼 𝗕𝗮𝗰𝗸𝘂𝗽 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url='https://t.me/+g0fC_YmH4GYwZTkx'),
     ],
     ]
     try:
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text = '•• 𝗥𝗘𝗟𝗢𝗔𝗗 ••',
+                    text = '•• 𝗧𝗿𝘆 𝗔𝗴𝗮𝗶𝗻 ••',
                     url = f"https://t.me/{client.username}?start={message.command[1]}"
                 )
             ]
