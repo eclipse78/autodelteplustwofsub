@@ -96,7 +96,8 @@ async def start_command(client: Client, message: Message):
             try:
                 await snt_msg.delete()
                 await SD.delete()
-                await message.reply_text("<b>Files have been automatically deleted due to copyright issues</b)")
+                await message.reply_text("<b>Files have been automatically deleted due to copyright issues</b>)")
+                await asyncio.sleep(0.5)
             except:
                 pass
         return
