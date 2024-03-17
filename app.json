@@ -51,7 +51,7 @@
     },
     "FORCE_SUB_MESSAGE": {
       "description": "Optional: Force Sub message of bot, use HTML parsemode format",
-      "value": "<b>Hello</b> {first}\n\n<b>To get the files you need to join in my backup channels and then click the reload button</b>"
+      "value": "<b>Hello</b> {first}\n\n<b>To get the files you need to join in my backup channels and then click the try again button</b>"
     },
     "ADMINS": {
       "description": "A space separated list of user_ids of Admins, they can only create links",
