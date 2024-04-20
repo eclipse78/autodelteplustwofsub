@@ -95,7 +95,7 @@ async def start_command(client: Client, message: Message):
         for snt_msg in snt_msgs:
             try:
                 await snt_msg.delete()
-                await SD.edit_text("<b>The above files have been successfully deleted</b>")
+                await SD.edit_text("<b>The above files have been deleted successfully</b>")
             except:
                 pass
         return
