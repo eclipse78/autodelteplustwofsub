@@ -100,14 +100,15 @@ async def start_command(client: Client, message: Message):
                 pass
         return
      else:
-         reply_markup = InlineKeyboardMarkup([[
-      InlineKeyboardButton('Update Channel', url='https://t.me/AnimeXWrld'),
-      InlineKeyboardButton('Support Group', url='https://t.me/AnimeXWrld_Chat')
-    ],[
-      InlineKeyboardButton('about', callback_data='about'),
-      InlineKeyboardButton('close', callback_data='close')
-    ]])
-         await message.reply_text(
+        reply_markup = InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("⚡️ ᴀʙᴏᴜᴛ", callback_data = "about"),
+                    InlineKeyboardButton('🍁 ᴘʀᴇᴍɪᴜᴍ', url='https://t.me/OtakuFlix_Network/4639')
+                ]
+            ]
+        )
+        await message.reply_text(
             text = START_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
