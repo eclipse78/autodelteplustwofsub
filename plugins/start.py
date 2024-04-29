@@ -99,27 +99,22 @@ async def start_command(client: Client, message: Message):
             except:
                 pass
         return
-        
-        @Client.on_message(filters.private & filters.command("start"))
-async def start(client, message):
-    await madflixbotz.add_user(client, message)                
-    button = InlineKeyboardMarkup([[
+     else:
+         reply_markup = InlineKeyboardMarkup([[
       InlineKeyboardButton('Update Channel', url='https://t.me/AnimeXWrld'),
       InlineKeyboardButton('Support Group', url='https://t.me/AnimeXWrld_Chat')
     ],[
       InlineKeyboardButton('about', callback_data='about'),
       InlineKeyboardButton('close', callback_data='close')
     ]])
-    if Config.START_PIC:
-        await message.reply_photo(Config.START_PIC, text = START_MSG.format(
+         await message.reply_photo(photo=START_PIC, text = START_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
                 username = None if not message.from_user.username else '@' + message.from_user.username,
                 mention = message.from_user.mention,
                 id = message.from_user.id
-            ), reply_markup=button)       
-    else:
-        await message.reply_text(text = START_MSG.format(user.mention), reply_markup=button, disable_web_page_preview=True)
+            ), reply_markup = reply_markup,disable_web_page_preview = True,
+            quote = True)
         return
 
     
