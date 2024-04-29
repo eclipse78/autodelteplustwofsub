@@ -84,7 +84,7 @@ async def start_command(client: Client, message: Message):
                 await asyncio.sleep(0.5)
                 snt_msgs.append(snt_msg)
             except FloodWait as e:
-                await asyncio.sleep(e.x)
+                await asyncio.sleep(0.5)
                 snt_msg = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
                 snt_msgs.append(snt_msg)
             except:
