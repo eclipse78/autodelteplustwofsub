@@ -49,6 +49,9 @@ try:
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
 
+#start pic
+START_PIC   = os.environ.get("START_PIC", "https://telegra.ph/file/cca3bb6d5f22a4f584723.jpg")
+
 #Force sub message 
 FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Hello {first}\n\n<b>To get the files you need to join in my backup channels and then click the reload button</b>")
 
