@@ -17,7 +17,7 @@ from database.database import add_user, del_user, full_userbase, present_user
 
 """add time im seconds for waitingwaiting before delete 
 1min=60, 2min=60×2=120, 5min=60×5=300"""
-SECONDS = int(os.getenv("SECONDS", "60"))
+SECONDS = int(os.getenv("SECONDS", "600"))
 
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
@@ -79,6 +79,10 @@ async def start_command(client: Client, message: Message):
             else:
                 reply_markup = None
 
+
+            # Add image URL for the start message
+            img_url = "https://telegra.ph/file/cca3bb6d5f22a4f584723.jpg"
+
             try:
                 snt_msg = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
                 await asyncio.sleep(0.5)
@@ -89,7 +93,7 @@ async def start_command(client: Client, message: Message):
                 snt_msgs.append(snt_msg)
             except:
                 pass
-        SD = await message.reply_text("<b>Note</b>\n<b>• Save these files to the your saved messages or to any other private chat, Files in this chat will be automatically deleted after 60 seconds</b>")
+        SD = await message.reply_text("<❗Note</b>\n<b>• Save these files to the your saved messages or to any other private chat, Files in this chat will be automatically deleted after 10 minutes</b>")
         await asyncio.sleep(SECONDS)
 
         for snt_msg in snt_msgs:
@@ -108,7 +112,12 @@ async def start_command(client: Client, message: Message):
                 ]
             ]
         )
-        await message.reply_text(
+
+        # Add image URL for the start message
+            img_url = "https://telegra.ph/file/cca3bb6d5f22a4f584723.jpg"
+
+        await message.reply_photo(
+            photo=img_url,
             text = START_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
