@@ -79,10 +79,6 @@ async def start_command(client: Client, message: Message):
             else:
                 reply_markup = None
 
-
-            # Add image URL for the start message
-            img_url = "https://telegra.ph/file/cca3bb6d5f22a4f584723.jpg"
-
             try:
                 snt_msg = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
                 await asyncio.sleep(0.5)
@@ -112,9 +108,6 @@ async def start_command(client: Client, message: Message):
                 ]
             ]
         )
-
-        # Add image URL for the start message
-            img_url = "https://telegra.ph/file/cca3bb6d5f22a4f584723.jpg"
 
         await message.reply_text(
             text = START_MSG.format(
