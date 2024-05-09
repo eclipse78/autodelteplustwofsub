@@ -93,13 +93,13 @@ async def start_command(client: Client, message: Message):
                 snt_msgs.append(snt_msg)
             except:
                 pass
-        SD = await message.reply_text("<❗Note</b>\n<b>• Save these files to the your saved messages or to any other private chat, Files in this chat will be automatically deleted after 10 minutes</b>")
+        SD = await message.reply_text("<b>❗Note</b>\n<b>• Save these files to the your saved messages or to any other private chat, Files in this chat will be automatically deleted after 10 minutes</b>")
         await asyncio.sleep(SECONDS)
 
         for snt_msg in snt_msgs:
             try:
                 await snt_msg.delete()
-                await SD.edit_text("<b>The above files have been deleted successfully</b>")
+                await SD.edit_text("<b>The files have been deleted successfully</b>")
             except:
                 pass
         return
@@ -116,8 +116,7 @@ async def start_command(client: Client, message: Message):
         # Add image URL for the start message
             img_url = "https://telegra.ph/file/cca3bb6d5f22a4f584723.jpg"
 
-        await message.reply_photo(
-            photo=img_url,
+        await message.reply_text(
             text = START_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
