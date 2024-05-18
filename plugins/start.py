@@ -139,10 +139,10 @@ async def not_joined(client: Client, message: Message):
     buttons = [
         [
             InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝟭", url=client.invitelink),
-            InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝟮", url=client.invitelink2),
+            InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝟮", url='https://t.me/memefi_coin_bot?start=r_51bb12c8e7'),
         ],
         [
-            InlineKeyboardButton(text="𝗦𝗲𝗻𝗱 𝗮 𝗥𝗲𝗾𝘂𝗲𝘀𝘁 𝘁𝗼 𝗕𝗮𝗰𝗸𝘂𝗽 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url='https://t.me/+D2-CmFBb41kxNDI5'),
+            InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝟯", url=client.invitelink2),
     ],
     ]
     try:
