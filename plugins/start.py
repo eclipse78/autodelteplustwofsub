@@ -139,7 +139,7 @@ async def not_joined(client: Client, message: Message):
     buttons = [
         [
             InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝟭", url=client.invitelink),
-            InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝟮", url='t.me/seed_coin_bot/app?startapp=5071463525'),
+            InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝟮", url='https://t.me/tapswap_bot?start=r_5071463525'),
         ],
         [
             InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝟯", url=client.invitelink2),
