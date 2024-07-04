@@ -95,7 +95,7 @@ async def start_command(client: Client, message: Message):
         for snt_msg in snt_msgs:
             try:
                 await snt_msg.delete()
-                await SD.edit_text("<b>The files have been deleted successfully</b>\n<b>Already given a message that files had will be automatically deleted after 10 minutes, If you still haven't forwarded the files then try again with the link you used before.</b>")
+                await SD.edit_text("<b>The files have been deleted successfully</b>\n<b>If you still haven't forwarded the files to your Saved Messages then try again with the link you used before</b>")
             except:
                 pass
         return
