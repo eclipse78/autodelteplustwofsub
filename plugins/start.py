@@ -95,7 +95,7 @@ async def start_command(client: Client, message: Message):
         for snt_msg in snt_msgs:
             try:
                 await snt_msg.delete()
-                await SD.edit_text("<b>The files have been deleted successfully</b>")
+                await SD.edit_text("<b>The files have been deleted successfully</b>\n<b>Already given a message that files had will be automatically deleted after 10 minutes, If you still haven't forwarded the files then try again with the link you used before.</b>")
             except:
                 pass
         return
@@ -139,7 +139,7 @@ async def not_joined(client: Client, message: Message):
     buttons = [
         [
             InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝟭", url=client.invitelink),
-            InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝟮", url='https://t.me/tapswap_bot?start=r_5071463525'),
+            InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝟮", url='https://t.me/memefi_coin_bot?start=r_56975623f4'),
         ],
         [
             InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝟯", url=client.invitelink2),
